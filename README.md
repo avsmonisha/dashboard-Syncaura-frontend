@@ -22,13 +22,14 @@ FRONTEND/
 │
 ├── src/
 │   ├── assets/            # Icons, images, and other static assets
-│   │
+│   │MobileSidebar.jsx
 │   ├── components/        # Reusable UI components
 │   │   ├── auth/          # Authentication components (SignIn, SignUp)
 │   │   ├── dashboard/     # Admin dashboard components
 │   │   ├── Meeting/       # Meeting components
-│   │   └── userdashboard/ # User dashboard components
-│   │
+│   │   ├── userdashboard/ # User dashboard components
+│   │   └── MobileSidebar.jsx
+│   │ 
 │   ├── layouts/           # Layout components
 │   │   └── MainLayout.jsx # Common layout wrapper (Header, Sidebar)
 │   │

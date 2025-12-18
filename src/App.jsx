@@ -13,6 +13,8 @@ import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import Topbar from "./components/userdashboard/Topbar/Topbar"
 import Header from "./components/Meeting/Header/Header";
+import MobileSidebar from "./components/MobileSidebar";
+import Sidebar from "./components/userdashboard/Sidebar/Sidebar";
 
 export default function App() {
   return (
@@ -26,11 +28,23 @@ export default function App() {
         <Route
           path="/user-dashboard"
           element={
-            <MainLayout TopbarComponent={Topbar}>
+            <MainLayout TopbarComponent={Topbar} SideBar={Sidebar} >
               <div className="  w-full h-full">
                 <UserDashboard />
               </div>
             </MainLayout>
+          }
+        />
+        <Route
+          path="/dummy"
+          element={
+            <div className="flex min-h-screen">
+              <MobileSidebar />
+              <main className="flex-1 p-6">
+                Content here
+              </main>
+            </div>
+
           }
         />
 
@@ -54,7 +68,7 @@ export default function App() {
         <Route
           path="/meetings"
           element={
-            <MainLayout TopbarComponent={Header}>
+            <MainLayout SideBar={MobileSidebar} TopbarComponent={Header}>
               <Meetings />
             </MainLayout>
           }
@@ -62,7 +76,7 @@ export default function App() {
         <Route
           path="/chat"
           element={
-            <MainLayout TopbarComponent={Topbar}>
+            <MainLayout TopbarComponent={Header} SideBar={MobileSidebar} >
               <Chat />
             </MainLayout>
           }
