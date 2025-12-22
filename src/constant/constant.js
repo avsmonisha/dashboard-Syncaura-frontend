@@ -580,3 +580,63 @@ export const CHATS = [
     files: [{ name: "ops_checklist.docx", size: "430 KB", date: "Nov 24" }],
   },
 ];
+
+
+export const COMPLAINTS = [
+  {
+    id: "#1023",
+    subject: "Slow WiFi in Library",
+    category: "Network",
+    date: "2024-11-18T09:32:15.421Z",
+    status: "Open",
+  },
+  {
+    id: "#1019",
+    subject: "Cannot access portal",
+    category: "Login",
+    date: "2024-11-16T14:10:42.109Z",
+    status: "In Progress",
+  },
+  {
+    id: "#1011",
+    subject: "ID Card malfunction",
+    category: "Access",
+    date: "2024-11-12T08:55:03.887Z",
+    status: "Resolved",
+  },
+  {
+    id: "#1005",
+    subject: "AC Leaking in Room 302",
+    category: "Facilities",
+    date: "2024-11-01T11:27:59.300Z",
+    status: "Resolved",
+  },
+  {
+    id: "#1042",
+    subject: "Portal access attempt",
+    category: "IT Security",
+    date: "2024-10-21T06:45:18.640Z",
+    status: "Open",
+  },
+  {
+    id: "#1016",
+    subject: "CCTV not working",
+    category: "Security",
+    date: "2024-09-14T17:02:44.212Z",
+    status: "Resolved",
+  },
+  {
+    id: "#1057",
+    subject: "Power voltage",
+    category: "Electrical",
+    date: "2024-11-03T12:19:09.531Z",
+    status: "In Progress",
+  },
+  {
+    id: "#1009",
+    subject: "Fire alarm issue",
+    category: "Safety",
+    date: "2024-08-27T04:36:51.998Z",
+    status: "Resolved",
+  },
+];

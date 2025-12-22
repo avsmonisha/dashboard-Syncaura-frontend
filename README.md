@@ -26,6 +26,7 @@ FRONTEND/
 │   ├── components/        # Reusable UI components
 │   │   ├── auth/          # Authentication components (SignIn, SignUp)
 │   │   ├── chats/         # Chat components
+│   │   ├── complaints/    # complaint components
 │   │   ├── dashboard/     # Admin dashboard components
 │   │   ├── Meeting/       # Meeting components
 │   │   ├── userdashboard/ # User dashboard components
@@ -40,6 +41,7 @@ FRONTEND/
 │   ├── pages/             # Page-level components
 │   │   ├── Attendance.jsx
 │   │   ├── Chat.jsx
+│   │   ├── Complaints.jsx
 │   │   ├── Dashboard.jsx
 │   │   ├── Documents.jsx
 │   │   ├── Meetings.jsx
@@ -72,6 +74,7 @@ FRONTEND/
 * "/user-dashboard" => **User dashboard Page**
 * "/meetings" => **Meeting Page**
 * "/chat" => **Chat Page**
+* "/complaints" => **Complaint Page**
 
 ## 🧩 Features Overview
 

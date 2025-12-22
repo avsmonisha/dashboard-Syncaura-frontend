@@ -15,6 +15,7 @@ import Topbar from "./components/userdashboard/Topbar/Topbar"
 import Header from "./components/Meeting/Header/Header";
 import MobileSidebar from "./components/MobileSidebar";
 import Sidebar from "./components/userdashboard/Sidebar/Sidebar";
+import Complaints from "./pages/Complaints";
 
 export default function App() {
   return (
@@ -78,6 +79,14 @@ export default function App() {
           element={
             <MainLayout TopbarComponent={Header} SideBar={MobileSidebar} >
               <Chat />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/complaints"
+          element={
+            <MainLayout TopbarComponent={Header} SideBar={MobileSidebar} >
+              <Complaints />
             </MainLayout>
           }
         />
