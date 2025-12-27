@@ -15,6 +15,7 @@ import {
     Link2,
     Settings,
     X,
+    LogOut,
 } from "lucide-react";
 import useThemeStore from "../store/useThemeStore";
 import { NavLink } from "react-router-dom";
@@ -39,6 +40,10 @@ const menuItems = [
 
 export default function MobileSidebar({ open, setOpen }) {
     const { isDark } = useThemeStore()
+    const logOutHandle=()=>{
+        console.log('LogOut SUccessfully');
+        
+    }
 
     return (
         <>
@@ -59,7 +64,7 @@ export default function MobileSidebar({ open, setOpen }) {
     w-[230px] lg:w-[240px]
     h-screen flex flex-col
     fixed lg:static
-    top-0 left-0 z-50  border-r border-[#E0DDDD] dark:border-[#575757]
+    top-0 left-0 z-100  border-r border-[#E0DDDD] dark:border-[#575757]
     transform transition-transform duration-300
     ${open ? "translate-x-0" : "-translate-x-full"}
     lg:translate-x-0
@@ -102,23 +107,15 @@ export default function MobileSidebar({ open, setOpen }) {
 
                 <div className="flex flex-col gap-5 px-4 py-4">
                     <div className="h-px w-full bg-[#E0DDDD] dark:bg-[#575757]" />
-                    <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-2">
-                            <div className="w-9 h-9 rounded-full bg-linear-to-b from-red-600 to-red-900
- text-white flex items-center justify-center font-semibold">
-                                J
-                            </div>
-                            <div>
-                                <p className="text-sm  text-black dark:text-[#FFFFFF] font-bold">John Doe</p>
-                                <p className="text-xs text-[#989696] ">Free</p>
-                            </div>
-                        </div>
-                        <button className="text-xs dark:text-[#F8F8F8] bg-[#F8F8F8] dark:bg-[#383838] border text-black border-[#989696] px-3 py-1 rounded-full ">
-                            Upgrade
-                        </button>
-                    </div>
+                    <button onClick={()=>logOutHandle()}  className="flex cursor-pointer items-center justify-center gap-5 w-full">
+                        <LogOut className="size-6 text-[#FF0000]" />
+                        <h2 className="text-[#FF0000] text-xl font-semibold" >Log Out</h2>
+                        
+                    </button>
                 </div>
             </aside>
         </>
     );
 }
+
+
