@@ -4,7 +4,7 @@ const Tab = ({ name, count, curr, setCurr }) => {
   return (
     <div onClick={()=> setCurr(name)} 
       className={` px-5 py-2 rounded-xl flex items-center justify-center gap-3 ${
-        name === curr ? "bg-[#E0DDDD] dark:bg-[#4B4B4B] dark:text-[#F8F8F8]" : "bg-[#F8F8F8] dark:bg-[#000000] border border-[#EAECEF] dark:border-[#626262]"
+        name === curr ? "bg-[#E0DDDD] dark:bg-[#4B4B4B] dark:text-[#F8F8F8]" : "bg-[#F8F8F8] dark:bg-[#000000] border border-[#EAECEF] dark:border-[#626262] cursor-pointer"
       } `}
     >
       <h1 className={`text-sm font-semibold ${

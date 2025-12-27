@@ -29,7 +29,7 @@ const Projects = () => {
           <h1 className="font-bold text-3xl text-[#000000] dark:text-[#F8F8F8]">
             Projects
           </h1>
-          <div onClick={() => setShowModel(true)} className="px-4 py-2.5 bg-[#2457C5] dark:bg-[#73FBFD] rounded-3xl flex items-center justify-center gap-2 ">
+          <div onClick={() => setShowModel(true)} className="px-4 cursor-pointer py-2.5 bg-[#2457C5] dark:bg-[#73FBFD] rounded-3xl flex items-center justify-center gap-2 ">
             <Plus className="text-xl text-[#FFFFFF] dark:text-[#000000] " />
             <h2 className="text-[#FFFFFF] dark:text-[#000000] text-base font-semibold">
               New Project
@@ -115,9 +115,9 @@ const Projects = () => {
                   <div
                     onClick={() => setSelectedPriorityTab(item)}
                     key={idx}
-                    className={`flex items-center justify-center px-5 py-3 font-semibold rounded-3xl border ${selectedPriorityTab === item
+                    className={`flex  items-center justify-center px-5 py-3 font-semibold rounded-3xl border ${selectedPriorityTab === item
                       ? "border-[#2457C5] bg-[#E2EBFF] dark:bg-[#002B2C] dark:border-[#73FBFD]  "
-                      : "border-[#E1E4E8] dark:border-[#000000] bg-[#FFFFFF] dark:bg-[#000000]  "
+                      : "border-[#E1E4E8] dark:border-[#000000] bg-[#FFFFFF] dark:bg-[#000000] cursor-pointer "
                       }`}
                   >
                     <p
