@@ -3,10 +3,17 @@ import { Mail, Eye, EyeOff, Moon, Sun, User2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import EmptyShadowCircle from "../components/auth/EmptyShadowCircle";
 import { useForm } from "react-hook-form";
-import useThemeStore from "../store/useThemeStore";
+import { useDispatch, useSelector } from "react-redux";
+import {  toggleThemeMethod } from "../redux/slices/themeSlice";
 
 export default function SignUp() {
-  const {isDark: dark, toggleTheme: setDark }=useThemeStore();
+  const dark=useSelector((state)=>state.theme.isDark)
+  const dispatch=useDispatch()
+
+  const setDark=()=>{
+    dispatch(toggleThemeMethod())
+  }
+  // const {isDark: dark, toggleTheme: setDark }=useThemeStore();
   const [showPwd, setShowPwd] = useState(false);
   const [showCpwd, setShowCpwd] = useState(false);
   const {

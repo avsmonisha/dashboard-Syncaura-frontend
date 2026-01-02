@@ -17,8 +17,9 @@ import {
     X,
     LogOut,
 } from "lucide-react";
-import useThemeStore from "../store/useThemeStore";
+
 import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 
 const menuItems = [
@@ -36,7 +37,7 @@ const menuItems = [
 
 
 export default function MobileSidebar({ open, setOpen }) {
-    const { isDark } = useThemeStore()
+    const { isDark } = useSelector((state)=>state.theme.isDark)
     const logOutHandle = () => {
         console.log('LogOut SUccessfully');
 

@@ -1,5 +1,4 @@
 import Header from "../components/dashboard/Header/Header";
-import useThemeStore from "../store/useThemeStore";
 import DashboardHeader from "../components/dashboard/Main/SubHeader/DashboardHeader";
 import SidebarPanel from "../components/dashboard/SideBar/SidebarPanel";
 import QuickActions from "../components/dashboard/Main/SubMain/Left/QuickActions";
@@ -12,9 +11,11 @@ import ProjectItem from "../components/dashboard/Main/SubMain/Right/ProjectItem"
 import TaskStatCard from "../components/dashboard/Main/SubMain/Left/TaskStatCard";
 import DashboardCircles from "../components/dashboard/Main/SubMain/Left/DashboardCircles";
 import SupportChatbot from "../components/SupportChatbot";
+import { useSelector } from "react-redux";
 
 const Dashboard = () => {
-  const { isDark } = useThemeStore();
+  const isDark=useSelector((state)=>state.theme.isDark)
+  // const { isDark } = useThemeStore();
   const tabs = ["Last Projects", "On Deadline", "View All Projects"];
   const [active, setActive] = useState(0);
   const [subHeadActive, setSubHeaderActive] = useState("Dashboard");

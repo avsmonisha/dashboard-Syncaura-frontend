@@ -1,10 +1,10 @@
 import { useState } from "react";
-import useThemeStore from "../store/useThemeStore";
 import SupportChatbot from "../components/SupportChatbot";
+import { useSelector } from "react-redux";
 
 export default function MainLayout({ children, TopbarComponent, SideBar }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const {isDark}=useThemeStore()
+  const isDark=useSelector((state)=> state.theme.isDark)
 
   return (
     <div data-theme={isDark? "dark": "light"} className="flex h-screen overflow-hidden bg-[#f6f7fb] dark:bg-black">

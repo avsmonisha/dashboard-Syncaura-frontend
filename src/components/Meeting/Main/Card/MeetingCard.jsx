@@ -1,6 +1,7 @@
 import { Video, Camera, Monitor, ArrowRight } from "lucide-react";
-import useThemeStore from "../../../../store/useThemeStore"
+
 import { TbBrandGoogleDrive, TbBrandTeams } from "react-icons/tb";
+import { useSelector } from "react-redux";
 
 function getMeetingStatus(startTime, endTime) {
   const now = new Date();
@@ -91,7 +92,8 @@ export default function MeetingCard({
   avatarCount,
   isDoc
 }) {
-  const { isDark } = useThemeStore();
+  // const { isDark } = useThemeStore();
+  const isDark=useSelector((state)=>state.theme.isDark)
 
   const status = getMeetingStatus(startTime, endTime);
 

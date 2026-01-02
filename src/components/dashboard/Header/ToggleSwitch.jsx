@@ -1,9 +1,17 @@
-import useThemeStore from "../../../store/useThemeStore";
+
 import { FaMoon } from "react-icons/fa";
 import { IoIosSunny } from "react-icons/io";
+import { useDispatch, useSelector } from "react-redux";
+import {toggleThemeMethod} from "../../../redux/slices/themeSlice"
 
 const ToggleSwitch = () => {
-  const { isDark, toggleTheme } = useThemeStore();
+  const isDark  = useSelector((state)=>state.theme.isDark)
+  const dispatch= useDispatch()
+  
+  // const { isDark, toggleTheme } = useThemeStore();
+  const toggleTheme=()=>{
+   dispatch(toggleThemeMethod())
+  }
 
   return (
     <div

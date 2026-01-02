@@ -54,8 +54,10 @@ FRONTEND/
 │   │   ├── Tasks.jsx
 │   │   └── UserDashboard.jsx
 │   │
-│   ├── store/             # Global state management
-│   │   └── useThemeStore.js # Theme (dark/light) state store
+│   ├── redux/             # Global state management
+│   │   ├── slices # Theme (dark/light) state store
+│   │   │   └── themeSlice.js
+│   │   └── store.js
 │   │
 │   ├── App.jsx            # Root React component
 │   └── main.jsx           # Application entry point

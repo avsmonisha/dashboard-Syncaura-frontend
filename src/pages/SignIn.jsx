@@ -1,16 +1,22 @@
 import { useState } from 'react';
 import { Moon, Sun } from 'lucide-react';
 import { Link } from "react-router-dom";
-import useThemeStore from '../store/useThemeStore';
 import { useForm } from "react-hook-form";
 import EmptyShadowCircle from '../components/auth/EmptyShadowCircle';
+import { useDispatch, useSelector } from 'react-redux';
+import {toggleThemeMethod} from "../redux/slices/themeSlice"
 
 
 
 
 
 export default function SignIn() {
-  const { isDark, toggleTheme } = useThemeStore()
+  const isDark=useSelector((state)=>state.theme.isDark)
+  // const { isDark, toggleTheme } = useThemeStore()
+  const dispatch= useDispatch()
+  const toggleTheme=()=>{
+   dispatch(toggleThemeMethod())
+  }
   const { register, handleSubmit, formState: { errors } } = useForm();
 
   const onSubmit = (data) => {
