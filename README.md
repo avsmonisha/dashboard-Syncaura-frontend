@@ -30,6 +30,7 @@ FRONTEND/
 │   │   ├── complaints/    # complaint components
 │   │   ├── dashboard/     # Admin dashboard components
 │   │   ├── Meeting/       # Meeting components
+│   │   ├── notice/       # Notice components
 │   │   ├── projects/      # Projects components
 │   │   ├── userdashboard/ # User dashboard components
 │   │   ├── SupportChatbot.jsx # Chatbot Component

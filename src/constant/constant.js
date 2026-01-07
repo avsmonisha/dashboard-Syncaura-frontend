@@ -841,3 +841,98 @@ export const leaveHistory = [
   },
 ];
 
+export const dummyNotifications = [
+{ id: 1, text: "Complaint #1101 has been resolved", time: "2 hours ago" },
+{ id: 2, text: "New notice posted: Final Exam Schedule", time: "5 hours ago" },
+{ id: 3, text: "Admin replied to ticket #1019", time: "1 day ago" },
+{ id: 4, text: "New event added to calendar", time: "2 days ago" },
+{ id: 5, text: "Profile updated successfully", time: "3 days ago" }
+];
+
+export const notificationsList = [
+  {
+    id: 1,
+    category: "GENERAL",
+    title: "New Member recruited in the Team",
+    date: "2023-05-07T00:00:00.000Z",
+    type: "info",
+  },
+  {
+    id: 2,
+    category: "ACADEMIC",
+    title: "Final Exam Schedule Update",
+    date: "2023-12-13T00:00:00.000Z",
+    type: "academic",
+  },
+  {
+    id: 3,
+    category: "GENERAL",
+    title: "Holiday Announcement: Winter Break",
+    date: "2023-12-10T00:00:00.000Z",
+    type: "info",
+  },
+  {
+    id: 4,
+    category: "IT",
+    title: "System Maintenance Scheduled",
+    date: "2023-12-08T00:00:00.000Z",
+    type: "system",
+  },
+  {
+    id: 5,
+    category: "FACILITY",
+    title: "Library Hours Extension",
+    date: "2023-12-05T00:00:00.000Z",
+    type: "facility",
+  },
+  {
+    id: 6,
+    category: "IT",
+    title: "Project Completion Notice",
+    date: "2023-12-11T00:00:00.000Z",
+    type: "system",
+  },
+  {
+    id: 7,
+    category: "GENERAL",
+    title: "New Brand Opening",
+    date: "2023-02-06T00:00:00.000Z",
+    type: "info",
+  },
+  {
+    id: 8,
+    category: "ACADEMIC",
+    title: "Semester Registration Deadline Extended",
+    date: "2024-01-05T00:00:00.000Z",
+    type: "academic",
+  },
+  {
+    id: 9,
+    category: "IT",
+    title: "Portal Downtime Resolved",
+    date: "2024-01-12T00:00:00.000Z",
+    type: "system",
+  },
+  {
+    id: 10,
+    category: "FACILITY",
+    title: "New Parking Area Opened",
+    date: "2024-01-18T00:00:00.000Z",
+    type: "facility",
+  },
+  {
+    id: 11,
+    category: "GENERAL",
+    title: "Annual Sports Meet Announcement",
+    date: "2024-02-01T00:00:00.000Z",
+    type: "info",
+  },
+  {
+    id: 12,
+    category: "ACADEMIC",
+    title: "Results Published for Semester Exams",
+    date: "2024-02-10T00:00:00.000Z",
+    type: "academic",
+  },
+];
+
