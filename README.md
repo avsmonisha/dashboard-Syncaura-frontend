@@ -29,6 +29,7 @@ FRONTEND/
 │   │   ├── chats/         # Chat components
 │   │   ├── complaints/    # complaint components
 │   │   ├── dashboard/     # Admin dashboard components
+│   │   ├── Document/      # Documnet components
 │   │   ├── Meeting/       # Meeting components
 │   │   ├── notice/       # Notice components
 │   │   ├── projects/      # Projects components
