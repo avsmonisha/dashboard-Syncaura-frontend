@@ -1,4 +1,4 @@
-import { AnimatePresence } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import { Funnel, Search } from 'lucide-react'
 import { useState } from 'react'
 import ComplaintFilters from '../ComplaintFilters'
@@ -28,15 +28,21 @@ const Complaintheader = ({ search, setSearch, onApplyFilters }) => {
         <span>Filter</span>
       </button>
 
-      <AnimatePresence>
+       <AnimatePresence mode="wait">
         {openFilter && (
-          <div className="w-full absolute left-0 top-30 md:top-20 z-100 ">
+         <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: 10 }}
+      transition={{ duration: 0.25, ease: "easeOut" }}
+      className="w-full absolute left-0 top-30 md:top-20 z-100"
+    >
            <ComplaintFilters
   onClose={() => setOpenFilter(false)}
   onApply={onApplyFilters}
 />
 
-          </div>
+          </motion.div>
         )}
       </AnimatePresence>
    

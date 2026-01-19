@@ -935,6 +935,7 @@ export const notificationsList = [
     title: "New Member recruited in the Team",
     date: "2023-05-07T00:00:00.000Z",
     type: "info",
+    status: "Yes",
   },
   {
     id: 2,
@@ -942,6 +943,7 @@ export const notificationsList = [
     title: "Final Exam Schedule Update",
     date: "2023-12-13T00:00:00.000Z",
     type: "academic",
+    status: "No",
   },
   {
     id: 3,
@@ -949,6 +951,7 @@ export const notificationsList = [
     title: "Holiday Announcement: Winter Break",
     date: "2023-12-10T00:00:00.000Z",
     type: "info",
+    status: "Yes",
   },
   {
     id: 4,
@@ -956,6 +959,7 @@ export const notificationsList = [
     title: "System Maintenance Scheduled",
     date: "2023-12-08T00:00:00.000Z",
     type: "system",
+    status: "No",
   },
   {
     id: 5,
@@ -963,6 +967,7 @@ export const notificationsList = [
     title: "Library Hours Extension",
     date: "2023-12-05T00:00:00.000Z",
     type: "facility",
+    status: "Yes",
   },
   {
     id: 6,
@@ -970,6 +975,7 @@ export const notificationsList = [
     title: "Project Completion Notice",
     date: "2023-12-11T00:00:00.000Z",
     type: "system",
+    status: "Yes",
   },
   {
     id: 7,
@@ -977,6 +983,7 @@ export const notificationsList = [
     title: "New Brand Opening",
     date: "2023-02-06T00:00:00.000Z",
     type: "info",
+    status: "No",
   },
   {
     id: 8,
@@ -984,6 +991,7 @@ export const notificationsList = [
     title: "Semester Registration Deadline Extended",
     date: "2024-01-05T00:00:00.000Z",
     type: "academic",
+    status: "Yes",
   },
   {
     id: 9,
@@ -991,6 +999,7 @@ export const notificationsList = [
     title: "Portal Downtime Resolved",
     date: "2024-01-12T00:00:00.000Z",
     type: "system",
+    status: "Yes",
   },
   {
     id: 10,
@@ -998,6 +1007,7 @@ export const notificationsList = [
     title: "New Parking Area Opened",
     date: "2024-01-18T00:00:00.000Z",
     type: "facility",
+    status: "No",
   },
   {
     id: 11,
@@ -1005,6 +1015,7 @@ export const notificationsList = [
     title: "Annual Sports Meet Announcement",
     date: "2024-02-01T00:00:00.000Z",
     type: "info",
+    status: "Yes",
   },
   {
     id: 12,
@@ -1012,8 +1023,10 @@ export const notificationsList = [
     title: "Results Published for Semester Exams",
     date: "2024-02-10T00:00:00.000Z",
     type: "academic",
+    status: "No",
   },
 ];
+
 
 export const reportsList = [
   {
