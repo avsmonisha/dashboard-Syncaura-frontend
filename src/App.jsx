@@ -1,4 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Provider } from 'react-redux';
+import { store } from './redux/store';
 import MainLayout from "./layouts/MainLayout";
 
 import Projects from "./pages/Projects";
@@ -23,110 +25,112 @@ import AdminHeader from "./components/admin/AdminHeader";
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/normal-dashboard" element={<Dashboard />} />
-        <Route path="/" element={<Home />} />
-        <Route
-          path="/admin"
-          element={
-            <MainLayout
-              SideBar={AdminSidebar}
-              TopbarComponent={AdminHeader}
-            >
-              <Admin />
-            </MainLayout>
-          }
-        />
-        <Route path="/sign-in" element={<SignIn />} />
-        <Route path="/sign-up" element={<SignUp />} />
+    <Provider store={store}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/normal-dashboard" element={<Dashboard />} />
+          <Route path="/" element={<Home />} />
+          <Route
+            path="/admin"
+            element={
+              <MainLayout
+                SideBar={AdminSidebar}
+                TopbarComponent={AdminHeader}
+              >
+                <Admin />
+              </MainLayout>
+            }
+          />
+          <Route path="/sign-in" element={<SignIn />} />
+          <Route path="/sign-up" element={<SignUp />} />
 
-        {/* User dashboard with a different Topbar */}
-        <Route
-          path="/user-dashboard"
-          element={
-            <MainLayout TopbarComponent={Header} SideBar={MobileSidebar} >
-              <div className="  w-full h-full">
-                <UserDashboard />
-              </div>
-            </MainLayout>
-          }
-        />
-        <Route
-          path="/projects"
-          element={
-            <MainLayout TopbarComponent={Header} SideBar={MobileSidebar}>
-              <Projects />
-            </MainLayout>
-          }
-        />
-        <Route
-          path="/attendance-leave"
-          element={
-            <MainLayout TopbarComponent={Header} SideBar={MobileSidebar}>
-              <AttendanceLeave />
-            </MainLayout>
-          }
-        />
-        <Route
-          path="/tasks"
-          element={
-            <MainLayout TopbarComponent={Header}>
-              <Tasks />
-            </MainLayout>
-          }
-        />
-        <Route
-          path="/meetings"
-          element={
-            <MainLayout SideBar={MobileSidebar} TopbarComponent={Header}>
-              <Meetings />
-            </MainLayout>
-          }
-        />
-        <Route
-          path="/chat"
-          element={
-            <MainLayout TopbarComponent={Header} SideBar={MobileSidebar} >
-              <Chat />
-            </MainLayout>
-          }
-        />
-        <Route
-          path="/notice"
-          element={
-            <MainLayout TopbarComponent={Header} SideBar={MobileSidebar} >
-              <Notice />
-            </MainLayout>
-          }
-        />
-        <Route
-          path="/documents"
-          element={
-            <MainLayout TopbarComponent={Header} SideBar={MobileSidebar} >
-              <Documents />
-            </MainLayout>
-          }
-        />
+          {/* User dashboard with a different Topbar */}
+          <Route
+            path="/user-dashboard"
+            element={
+              <MainLayout TopbarComponent={Header} SideBar={MobileSidebar} >
+                <div className="w-full h-full">
+                  <UserDashboard />
+                </div>
+              </MainLayout>
+            }
+          />
+          <Route
+            path="/projects"
+            element={
+              <MainLayout TopbarComponent={Header} SideBar={MobileSidebar}>
+                <Projects />
+              </MainLayout>
+            }
+          />
+          <Route
+            path="/attendance-leave"
+            element={
+              <MainLayout TopbarComponent={Header} SideBar={MobileSidebar}>
+                <AttendanceLeave />
+              </MainLayout>
+            }
+          />
+          <Route
+            path="/tasks"
+            element={
+              <MainLayout TopbarComponent={Header}>
+                <Tasks />
+              </MainLayout>
+            }
+          />
+          <Route
+            path="/meetings"
+            element={
+              <MainLayout SideBar={MobileSidebar} TopbarComponent={Header}>
+                <Meetings />
+              </MainLayout>
+            }
+          />
+          <Route
+            path="/chat"
+            element={
+              <MainLayout TopbarComponent={Header} SideBar={MobileSidebar} >
+                <Chat />
+              </MainLayout>
+            }
+          />
+          <Route
+            path="/notice"
+            element={
+              <MainLayout TopbarComponent={Header} SideBar={MobileSidebar} >
+                <Notice />
+              </MainLayout>
+            }
+          />
+          <Route
+            path="/documents"
+            element={
+              <MainLayout TopbarComponent={Header} SideBar={MobileSidebar} >
+                <Documents />
+              </MainLayout>
+            }
+          />
 
-        <Route
-          path="/complaints"
-          element={
-            <MainLayout TopbarComponent={Header} SideBar={MobileSidebar} >
-              <Complaints />
-            </MainLayout>
-          }
-        />
-        <Route
-          path="/settings"
-          element={
-            <MainLayout TopbarComponent={Header} SideBar={MobileSidebar} >
-              <Settings />
-            </MainLayout>
-          }
-        />
-        
-      </Routes>
-    </BrowserRouter>
+          <Route
+            path="/complaints"
+            element={
+              <MainLayout TopbarComponent={Header} SideBar={MobileSidebar} >
+                <Complaints />
+              </MainLayout>
+            }
+          />
+          <Route
+            path="/settings"
+            element={
+              <MainLayout TopbarComponent={Header} SideBar={MobileSidebar} >
+                <Settings />
+              </MainLayout>
+            }
+          />
+          
+        </Routes>
+      </BrowserRouter>
+    </Provider>
   );
 }

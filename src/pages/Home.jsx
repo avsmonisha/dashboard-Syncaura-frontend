@@ -1,9 +1,28 @@
-import React from 'react'
+import React from 'react';
+import Navbar from '../components/home/Navbar';
+import Hero from '../components/home/Hero';
+import StatsSection from '../components/home/StatsSection';
+import WorkflowSection from '../components/home/WorkflowSection';
+import FeatureShowcase from '../components/home/FeatureShowcase';
+import ToolsGrid from '../components/home/ToolsGrid';
+import Testimonials from '../components/home/Testimonials';
+import CTABanner from '../components/home/CTABanner';
+import Newsletter from '../components/home/Newsletter';
+import Footer from '../components/home/Footer';
 
-const Home = () => {
+export default function Home() {
   return (
-    <div>Home</div>
-  )
+    <div className="min-h-screen" style={{ backgroundColor: 'var(--bg-primary)' }}>
+      <Navbar />
+      <Hero />
+      <StatsSection />
+      <WorkflowSection />
+      <FeatureShowcase />
+      <ToolsGrid />
+      <Testimonials />
+      <CTABanner />
+      <Newsletter />
+      <Footer />
+    </div>
+  );
 }
-
-export default Home
