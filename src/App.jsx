@@ -25,7 +25,7 @@ import AdminHeader from "./components/admin/AdminHeader";
 
 export default function App() {
   return (
-    <Provider store={store}>
+  
       <BrowserRouter>
         <Routes>
           <Route path="/normal-dashboard" element={<Dashboard />} />
@@ -131,6 +131,6 @@ export default function App() {
           
         </Routes>
       </BrowserRouter>
-    </Provider>
+
   );
 }
