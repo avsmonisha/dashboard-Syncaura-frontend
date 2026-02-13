@@ -1,4 +1,5 @@
 import { Calendar, CheckCircle2, Ellipsis, Flag, Tally2 } from "lucide-react";
+import { motion } from "framer-motion";
 
 const ProjectCard = ({
   title,
@@ -65,15 +66,17 @@ const ProjectCard = ({
           </div>
 
           <div className="relative w-full h-2 bg-[#F3F4F6] rounded-2xl">
-            <div
+            <motion.div
               className={`absolute top-0 left-0 h-2 ${
                 progress < 50
                   ? "bg-[#EF4444]"
                   : progress < 100
                   ? "bg-[#3B82F6]"
                   : "bg-[#22C55E]"
-              }  rounded-l-2xl ${progress === 100 && "rounded-r-2xl"}`}
-              style={{ width: `${progress}%` }}
+              } rounded-l-2xl ${progress === 100 && "rounded-r-2xl"}`}
+              initial={{ width: 0 }}
+              animate={{ width: `${progress}%` }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
             />
           </div>
         </div>

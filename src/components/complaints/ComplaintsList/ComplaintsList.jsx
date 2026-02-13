@@ -1,5 +1,6 @@
 import { CircleAlert, CircleCheck, Clock, Eye } from "lucide-react";
 import { FaClock } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 export default function ComplaintsList({
   COMPLAINTS,
@@ -31,6 +32,28 @@ export default function ComplaintsList({
     return <CircleCheck className="size-4 fill-[#D1FAE5] text-[#29CC39] dark:fill-[#1F402F]  " />;
   };
 
+  const containerVariants = {
+    hidden: {},
+    show: {
+      transition: {
+        staggerChildren: 0.06,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: {
+      opacity: 0,
+    },
+    show: {
+      opacity: 1,
+      transition: {
+        duration: 0.35,
+        ease: "easeOut",
+      },
+    },
+  };
+
 
   return (
     <>
@@ -55,11 +78,20 @@ export default function ComplaintsList({
           </div>
         </div>
 
-        <div className="flex flex-col overflow-y-auto no-scrollbar">
+        <motion.div
+          className="flex flex-col overflow-y-auto no-scrollbar"
+          variants={containerVariants}
+          initial="hidden"
+          animate="show"
+          key={COMPLAINTS.length}
+        >
+
           {COMPLAINTS.map(({ id, subject, status, category, date }, idx) => (
-            <div
+            <motion.div
+              variants={itemVariants}
               onClick={() => setActiveId(id)}
-              key={idx}
+              key={id}
+
               className={`relative grid py-5 grid-cols-11 px-5 xl:px-15 2xl:px-20 gap-x-2 place-items-center
                 transition-all duration-300
                 ${
@@ -106,9 +138,9 @@ export default function ComplaintsList({
               <div className="text-sm flex items-center justify-center w-full font-semibold col-span-1 text-[#000000] dark:text-[#FFFFFF]">
                 <Eye className="text-xl text-black dark:text-gray-300" />
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
       <div className="h-px block md:hidden w-full bg-[#E0DDDD] dark:bg-[#2E2F2F]  " />
 

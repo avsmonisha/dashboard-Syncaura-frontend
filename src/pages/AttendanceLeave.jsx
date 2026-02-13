@@ -170,7 +170,13 @@ const AttendanceLeave = () => {
           </div>
         </div>
       </div>
-      <div className="flex items-center px-5 py-3 gap-x-5 2xl:gap-x-15 gap-y-5 mt-2 flex-wrap justify-center">
+
+      <motion.div
+        initial={{ opacity: 0, x: -40 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.4, ease: "easeOut" }}
+        className="flex items-center px-5 py-3 gap-x-5 2xl:gap-x-15 gap-y-5 mt-2 flex-wrap justify-center"
+      >
         {attendanceData.map((item, index) => (
           <AttendanceCard key={index} {...item} />
         ))}
@@ -207,26 +213,26 @@ const AttendanceLeave = () => {
                 exit={{ opacity: 0, y: -10, scale: 0.95 }}
                 transition={{ duration: 0.25, ease: "easeOut" }}
                 className="
-    absolute 
-    left-1/2 
-    -translate-x-1/2
-    mt-2 md:mt-5
-    z-50
-    w-[95vw] sm:w-[90vw] md:w-[400px] 
-  "
+                    absolute 
+                    left-1/2 
+                    -translate-x-1/2
+                    mt-2 md:mt-5
+                    z-50
+                    w-[95vw] sm:w-[90vw] md:w-[400px] 
+                  "
               >
                 <div
                   ref={popupRef}
                   className="
-      flex flex-col gap-4
-      bg-[#FFFFFF] dark:bg-[#2E2F2F]
-      shadow-[0_0_10px_1px_#E0DDDD] dark:shadow-[0_0_10px_1px_#1D1D1D]
-      pt-2 pb-5 px-4
-      rounded-xl
-      w-full
-      sm:max-w-[420px]
-      md:max-w-[400px]
-    "
+                    flex flex-col gap-4
+                    bg-[#FFFFFF] dark:bg-[#2E2F2F]
+                    shadow-[0_0_10px_1px_#E0DDDD] dark:shadow-[0_0_10px_1px_#1D1D1D]
+                    pt-2 pb-5 px-4
+                    rounded-xl
+                    w-full
+                    sm:max-w-[420px]
+                    md:max-w-[400px]
+                  "
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
@@ -287,16 +293,16 @@ const AttendanceLeave = () => {
             )}
           </AnimatePresence>
         </div>
-      </div>
+      </motion.div>
 
       <div className="hidden md:flex flex-col flex-1 w-full mt-5 overflow-y-auto overflow-x-hidden no-scrollbar">
         <div
           className="sticky top-0 z-20
-    flex items-center justify-between w-full
-    border-t border-b border-[#EDEDED] dark:border-[#575757]
-    bg-[#FFFFFF] dark:bg-[#000000]
-    shadow-[0_4px_10px_0_rgba(0,0,0,0.25)]
-    px-11 py-5"
+          flex items-center justify-between w-full
+          border-t border-b border-[#EDEDED] dark:border-[#575757]
+          bg-[#FFFFFF] dark:bg-[#000000]
+          shadow-[0_4px_10px_0_rgba(0,0,0,0.25)]
+          px-11 py-5"
         >
           <h1 className="uppercase text-base font-medium dark:text-[#FFFFFF] text-[#000000] flex-3/9 w-full text-center">
             Date Range

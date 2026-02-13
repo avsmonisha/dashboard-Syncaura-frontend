@@ -5,10 +5,13 @@ import { useState, useMemo } from "react";
 import ScheduleMeetingModal from "../components/Meeting/Main/Model/ScheduleMeetingModal";
 import FilterTabs from "../components/Meeting/Main/Tab/FilterTabs";
 import Sidebar from "../components/Meeting/Sidebar/Sidebar";
+import { AnimatePresence, motion } from "framer-motion";
 
 export default function Meetings() {
   const [modalOpen, setModalOpen] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [direction, setDirection] = useState(0);
+
   const [meetings, setMeetings] = useState([
     {
       id: 1,
@@ -86,6 +89,16 @@ export default function Meetings() {
   };
 
   const [activeFilter, setActiveFilter] = useState("all");
+
+  const handleFilterChange = (filter) => {
+    const order = ["all", "upcoming", "ongoing", "past"];
+
+    const currentIndex = order.indexOf(activeFilter);
+    const nextIndex = order.indexOf(filter);
+
+    setDirection(nextIndex > currentIndex ? 1 : -1);
+    setActiveFilter(filter);
+  };
 
   const filteredMeetings = useMemo(() => {
     if (activeFilter === "all") return meetings;
@@ -187,7 +200,7 @@ export default function Meetings() {
               <div className="flex-1">
                 <FilterTabs
                   activeFilter={activeFilter}
-                  setActiveFilter={setActiveFilter}
+                  setActiveFilter={handleFilterChange}
                 />
               </div>
 
@@ -218,9 +231,21 @@ export default function Meetings() {
 
         {/* Cards */}
         <div className="flex flex-col sm:flex-row sm:flex-wrap mt-5 gap-5 sm:gap-9 justify-center items-center w-full max-w-[1440px] px-3 pb-10">
-          {filteredMeetings.map((meeting) => (
-            <MeetingCard key={meeting.id} {...meeting} />
-          ))}
+          <AnimatePresence mode="wait" custom={direction}>
+            <motion.div
+              key={activeFilter}
+              custom={direction}
+              initial={{ x: direction === 1 ? 150 : -150, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: direction === 1 ? -150 : 150, opacity: 0 }}
+              transition={{ duration: 0.35, ease: "easeInOut" }}
+              className="flex flex-col sm:flex-row sm:flex-wrap gap-5 sm:gap-9 justify-center items-center"
+            >
+              {filteredMeetings.map((meeting) => (
+                <MeetingCard key={meeting.id} {...meeting} />
+              ))}
+            </motion.div>
+          </AnimatePresence>
         </div>
 
         {modalOpen && (

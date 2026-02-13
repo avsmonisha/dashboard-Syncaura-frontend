@@ -1,6 +1,7 @@
 import { Edit3, Funnel, Search } from "lucide-react";
 import Avatar from "../Avatar";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 export default function Sidebar({ chats, selectedChat, onSelect }) {
   const [search, setSearch] = useState("");
@@ -28,6 +29,30 @@ export default function Sidebar({ chats, selectedChat, onSelect }) {
     setFilteredItems(searchData);
   }, [debouncedValue, chats]);
 
+  const containerVariants = {
+    hidden: {},
+    show: {
+      transition: {
+        staggerChildren: 0.05,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: {
+      opacity: 0,
+      x: -25,
+    },
+    show: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.3,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
     <aside
       className={
@@ -53,9 +78,16 @@ export default function Sidebar({ chats, selectedChat, onSelect }) {
       </div>
 
       {/* Chat list */}
-      <div className="flex-1 pb-20 sidebar-chat-list">
+      <motion.div
+        key={debouncedValue || "all"} 
+        variants={containerVariants}
+        initial="hidden"
+        animate="show"
+        className="flex-1 pb-20 sidebar-chat-list"
+      >
         {filteredItems.length !== 0 ? filteredItems.map((c) => (
-          <div
+          <motion.div
+            variants={itemVariants}
             key={c.id}
             onClick={() => onSelect(c)}
             className={`relative flex items-center gap-3 px-4 py-3 cursor-pointer
@@ -75,7 +107,7 @@ export default function Sidebar({ chats, selectedChat, onSelect }) {
                 {c.unread}
               </span>
             )}
-          </div>
+          </motion.div>
         )) : (
           <div className="h-full w-full flex flex-col items-center justify-center text-sm font-medium text-black dark:text-gray-400" >
             <div>
@@ -83,7 +115,7 @@ export default function Sidebar({ chats, selectedChat, onSelect }) {
             </div> <span className="font-bold text-lg">"{debouncedValue}"</span>
           </div>
         )}
-      </div>
+      </motion.div>
 
 
       {/* Floating circular Edit button inside sidebar */}

@@ -77,6 +77,27 @@ useEffect(() => {
     
     setAppliedFilters(newFilters);
   };
+
+  const containerVariants = {
+    hidden: {},
+    show: {
+      transition: {
+        staggerChildren: 0.06,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        duration: 0.3,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
     <div className="relative w-full transition-colors duration-500  border-t dark:border-[#000000] h-full bg-[#FFFFFF] dark:bg-black pt-6 pb-24 overflow-y-auto">
       <div className="flex flex-col sm:flex-row items-center justify-center mb-8 border-b border-[#E0DDDD] dark:border-[#575757] pt-3 px-5 pb-2 w-full gap-y-2  ">
@@ -130,9 +151,16 @@ useEffect(() => {
           </h1>
         </div>
         <div className="flex items-center justify-center w-full px-2 md:px-10 mt-3">
-          <div className="flex flex-col gap-2 justify-center w-full ">
+          <motion.div
+            className="flex flex-col gap-2 justify-center w-full"
+            variants={containerVariants}
+            initial="hidden"
+            animate="show"
+            key={fewNotification.length}
+          >
             {fewNotification.map((item, idx) => (
-              <NotificationRow
+              <motion.div key={item.id} variants={itemVariants}>
+                <NotificationRow
                 key={item.id}
                 about={item.title}
                 title={item.category}
@@ -152,6 +180,7 @@ useEffect(() => {
                       : "text-blue-500"
                 }
               />
+              </motion.div>
             ))}
             {fewNotification.length !== filteredNotice.length && (
               <div className="w-full flex items-center justify-center mt-4">
@@ -171,7 +200,7 @@ useEffect(() => {
                 </button>
               </div>
             )}
-          </div>
+          </motion.div>
         </div>
       </div>
       <button
